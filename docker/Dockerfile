@@ -44,14 +44,14 @@
 
 FROM redis/redis-stack:latest
 
-COPY ./redis-stack-container.tar .
+COPY ./redis-stack.tar .
 
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     REDISBLOOM_ARGS= \
     REDISEARCH_ARGS= \
     REDISJSON_ARGS= \
     REDISTIMESERIES_ARGS= \
-    REDIS_ARGS=
+    REDIS_ARGS="--requirepass admin123 --appendonly yes"
 
 CMD ["/entrypoint.sh"]
 

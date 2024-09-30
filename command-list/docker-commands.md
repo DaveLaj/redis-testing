@@ -53,3 +53,9 @@
     ```bash
     docker rm -f container_name/container_id
     ```
+
+- View Stdout and Stderr of a container
+
+    ```bash
+    docker logs -f $container_name
+    ```
